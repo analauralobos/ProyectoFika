@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario de Creación de Menú</title>
+</head>
+<body>
+    <h1>Crear Nuevo Menú</h1>
+    <form method="post" action="/admin/nuevo-menu">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre"><br>
+
+        <label for="descripcion">Descripción:</label>
+        <textarea id="descripcion" name="descripcion"></textarea><br>
+
+        <!-- Otros campos del formulario para la creación de menú -->
+
+        <input type="submit" value="Crear Menú">
+    </form>
+</body>
+</html>
