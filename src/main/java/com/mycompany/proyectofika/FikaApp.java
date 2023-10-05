@@ -1,27 +1,20 @@
 package com.mycompany.proyectofika;
-import static spark.Spark.*;
+
+import spark.ModelAndView;
+import spark.Spark;
+import spark.template.velocity.VelocityTemplateEngine;
 
 public class FikaApp {
     public static void main(String[] args) {
-        // Configuración del puerto en el que se ejecutará la aplicación Spark
-        port(4567);
+        // Configuración de tu motor de plantillas Velocity
+        VelocityTemplateEngine velocityTemplateEngine = new VelocityTemplateEngine();
 
-        // Crear instancias de controladores y servicios
-        MenuDAO menuDAO = new MenuDAO(); // Reemplaza con tu implementación real
-        PedidoDAO pedidoDAO = new PedidoDAO(); // Reemplaza con tu implementación real
-        MenuService menuService = new MenuService(menuDAO);
-        PedidoService pedidoService = new PedidoService(pedidoDAO);
-        MenuController menuController = new MenuController(menuService);
-        PedidoController pedidoController = new PedidoController(pedidoService);
+        // Otras configuraciones de Spark y rutas aquí
 
-        // Configurar rutas y controladores
-        menuController.registrarRutasCrearMenu();
-        pedidoController.registrarRutasConsultarPedidos();
-
-        // Otros ajustes y configuraciones
-
-        // Para detener la aplicación, puedes usar Ctrl+C en la línea de comandos
-        awaitInitialization();
-        System.out.println("La aplicación Spark Java se está ejecutando en el puerto 4567.");
+        // Ruta para la página de inicio del administrador
+        Spark.get("/admin", (req, res) -> {
+            // Renderizar la plantilla HTML del panel de control utilizando tu motor de plantillas Velocity
+            return velocityTemplateEngine.render(new ModelAndView(null, "templates/paneldecontrol.vm"));
+        });
     }
 }

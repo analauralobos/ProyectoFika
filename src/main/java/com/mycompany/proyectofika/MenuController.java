@@ -1,13 +1,24 @@
 package com.mycompany.proyectofika;
 
+import spark.Request;
+import spark.Response;
+import spark.Route;
+
+import java.util.List;
+
 public class MenuController {
-    private MenuService menuService;
+    private MenuDAO menuDAO;
 
-    public MenuController(MenuService menuService) {
-        this.menuService = menuService;
+    public MenuController(MenuDAO menuDAO) {
+        this.menuDAO = menuDAO;
     }
 
-    public void registrarRutasCrearMenu() {
-        // Rutas y lógica para la creación de menús
-    }
+    public Route mostrarMenus = (Request request, Response response) -> {
+        List<Menu> menus = menuDAO.obtenerTodosLosMenus();
+        // Renderizar una vista o devolver los menús como JSON, según tus necesidades
+        return "Lista de Menús: " + menus.toString();
+    };
+
+    // Agregar más métodos para crear, actualizar y eliminar menús según tus necesidades
 }
+

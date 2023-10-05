@@ -1,5 +1,47 @@
 package com.mycompany.proyectofika;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MenuDAO {
-    // Métodos para interactuar con la base de datos relacionados con menús
+    private List<Menu> menus;
+
+    public MenuDAO() {
+        // Inicializa una lista de menús en memoria y agrega algunos menús de ejemplo
+        this.menus = new ArrayList<>();
+        agregarMenusDeEjemplo();
+    }
+
+    // Método para agregar un nuevo menú
+    public void agregarMenu(Menu menu) {
+        menus.add(menu);
+    }
+
+    // Método para obtener todos los menús
+    public List<Menu> obtenerTodosLosMenus() {
+        return menus;
+    }
+
+    // Método para obtener un menú por su ID
+    public Menu obtenerMenuPorId(int id) {
+        for (Menu menu : menus) {
+            if (menu.getId() == id) {
+                return menu;
+            }
+        }
+        return null; // Retorna null si el menú no se encuentra
+    }
+
+    // Método para agregar menús de ejemplo
+    private void agregarMenusDeEjemplo() {
+        Menu menu1 = new Menu(1, "Menú de Desayuno");
+        menu1.agregarProducto(new Producto(1, "Café Espresso", "Café", 2.5));
+        menu1.agregarProducto(new Producto(2, "Croissant", "Panadería", 1.5));
+        agregarMenu(menu1);
+
+        Menu menu2 = new Menu(2, "Menú de Almuerzo");
+        menu2.agregarProducto(new Producto(3, "Sándwich de Pollo", "Sándwich", 5.5));
+        menu2.agregarProducto(new Producto(4, "Ensalada César", "Ensalada", 4.0));
+        agregarMenu(menu2);
+    }
 }
