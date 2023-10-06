@@ -26,7 +26,7 @@ public class Producto {
                 '}';
     }
 
-    int getId() {
-        return id; //To change body of generated methods, choose Tools | Templates.
+    public int getId() {
+        return id; 
     }
 }

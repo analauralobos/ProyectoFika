@@ -40,7 +40,7 @@ public class MenuDAO {
         agregarMenu(menu1);
 
         Menu menu2 = new Menu(2, "Menú de Almuerzo");
-        menu2.agregarProducto(new Producto(3, "Sándwich de Pollo", "Sándwich", 5.5));
+        menu2.agregarProducto(new Producto(3, "Sándwich de Jamón y Queso", "Sándwich", 5.5));
         menu2.agregarProducto(new Producto(4, "Ensalada César", "Ensalada", 4.0));
         agregarMenu(menu2);
     }

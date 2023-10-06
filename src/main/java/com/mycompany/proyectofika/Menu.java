@@ -20,7 +20,7 @@ public class Menu {
         productos.add(producto);
     }
 
-    int getId() {
+    public int getId() {
         return id; 
     }
 }
