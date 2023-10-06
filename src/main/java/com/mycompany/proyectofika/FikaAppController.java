@@ -7,14 +7,17 @@ import spark.Spark;
 import spark.template.velocity.VelocityTemplateEngine;
 
 public class FikaAppController {
+
     private PedidoController pedidoController;
+    private MenuController menuController;
     private VelocityTemplateEngine velocityTemplateEngine;
 
-    public FikaAppController(PedidoController pedidoController, VelocityTemplateEngine velocityTemplateEngine) {
-       this.pedidoController = pedidoController;
-       this.velocityTemplateEngine = velocityTemplateEngine;
+    public FikaAppController(PedidoController pedidoController, MenuController menuController, VelocityTemplateEngine velocityTemplateEngine) {
+        this.pedidoController = pedidoController;
+        this.menuController = menuController;
+        this.velocityTemplateEngine = velocityTemplateEngine;
     }
-    
+
     public void init() {
         // Configurar rutas y controladores
         Spark.get("/", (req, res) -> {
@@ -29,6 +32,9 @@ public class FikaAppController {
 
         Spark.get("/pedidos", (req, res) -> {
             return pedidoController.mostrarPedidos.handle(req, res);
+        });
+        Spark.get("/menu", (req, res) -> {
+            return menuController.mostrarMenus.handle(req, res);
         });
 
     }

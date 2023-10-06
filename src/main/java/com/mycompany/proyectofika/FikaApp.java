@@ -9,12 +9,16 @@ public class FikaApp {
 
         // Crear una instancia de PedidoDAO
         PedidoDAO pedidoDAO = new PedidoDAO();
-
+        // Crear una instancia de MenuDAO
+        MenuDAO menuDAO = new MenuDAO();
         // Crear una instancia de PedidoController y pasar el PedidoDAO
         PedidoController pedidoController = new PedidoController(pedidoDAO);
+        
+        // Crear una instancia de MenuController y pasar el PedidoDAO
+        MenuController menuController = new MenuController(menuDAO);
 
         // Crear una instancia de FikaAppController y pasar el PedidoController y VelocityTemplateEngine
-        FikaAppController fikaAppController = new FikaAppController(pedidoController, velocityTemplateEngine);
+        FikaAppController fikaAppController = new FikaAppController(pedidoController, menuController, velocityTemplateEngine);
 
         // Llamar al método init() en la instancia de FikaAppController
         fikaAppController.init();

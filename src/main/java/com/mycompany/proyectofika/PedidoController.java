@@ -20,13 +20,13 @@ public class PedidoController {
         this.pedidoDAO = pedidoDAO;
     }
 
-   public Route mostrarPedidos = (Request request, Response response) -> {
-    List<Pedido> pedidos = pedidoDAO.obtenerTodosLosPedidos();
+    public Route mostrarPedidos = (Request request, Response response) -> {
+        List<Pedido> pedidos = pedidoDAO.obtenerTodosLosPedidos();
 
-    Map<String, Object> model = new HashMap<>();
-    model.put("pedidos", pedidos);
+        Map<String, Object> model = new HashMap<>();
+        model.put("pedidos", pedidos);
 
-    return velocityTemplateEngine.render(new ModelAndView(model, "templates/pedidos.vm"));
-};
+        return velocityTemplateEngine.render(new ModelAndView(model, "templates/pedidos.vm"));
+    };
 
 }

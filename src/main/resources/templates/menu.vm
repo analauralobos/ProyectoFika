@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Menu - Panel de Administración</title>
+</head>
+<body>
+    <h1>Listado de Menús</h1>
+    <ul>
+        #foreach ($menu in $menus)
+        <li>
+            <h2>$menu.nombre</h2>
+            <ul>
+                #foreach ($producto in $menu.productos)
+                <li>
+                    <strong>Producto:</strong> $producto.nombre<br>
+                    <strong>Categoría:</strong> $producto.categoria<br>
+                    <strong>Precio:</strong> $producto.precio
+                </li>
+                #end
+            </ul>
+        </li>
+        #end
+    </ul>
+</body>
+</html>
+
+

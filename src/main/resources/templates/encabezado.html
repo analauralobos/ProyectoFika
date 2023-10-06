@@ -2,6 +2,8 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <title>Página de Inicio - Fika Café</title>
         
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -9,7 +11,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 
-        <link rel="stylesheet" href="../css/bootstrap.rtl.min.css" type="text/css"/>
+        <link rel="stylesheet" href="css/bootstrap.rtl.min.css" type="text/css"/>
         <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css"/>
         <link rel="stylesheet" href="../css/bootstrap.css" type="text/css"/>
         
@@ -17,6 +19,8 @@
             /* Estilos personalizados */
             .navbar {
                 background-color: #8B4513; /* Marrón oscuro */
+                width: 100%; /* Ancho del 100% del contenedor padre */
+                padding: 10px 0; /* Agrega espacio superior e inferior para un mejor aspecto */
             }
 
             .navbar-dark .navbar-toggler-icon {
@@ -39,7 +43,7 @@
     </head>
     <body>
         <header>
-            <img src="../img/logo.jpg" alt="alt"/>
+            
             <nav class="navbar navbar-expand-lg navbar-dark">
                 <div class="container">
                     <a class="navbar-brand" href="#"><img src="../img/logo.jpg" alt="Logo de Fika Café" class="img-fluid"></a>
@@ -99,5 +103,3 @@
         </header>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.5.2/dist/js/bootstrap.min.js"></script>
-    </body>
-</html>

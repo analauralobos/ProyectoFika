@@ -1,24 +1,12 @@
 #parse("templates/encabezado.html")
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Página de Inicio - Fika Café</title>
-    <link rel="stylesheet" type="text/css" href="templates/styles.css">
-    <script src="script.js"></script>
-</head>
+
 <body>
     <section>
         <!-- Contenido principal de la página de inicio -->
         <p>¡Descubre nuestras deliciosas opciones de café, productos y más!</p>
-        <img src="../img/logo.jpg" alt="noooo"/>
+        <img src="../img/fondo.jpg" alt="noooo"/>
     </section>
-
-    <footer>
-        <p>&copy; 2023 Fika Café</p>
-    </footer>
-
-    <!-- Agrega tu script JavaScript personalizado aquí si es necesario -->
 </body>
-</html>
+
+#parse("templates/pie.html")

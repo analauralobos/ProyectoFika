@@ -21,6 +21,6 @@ public class Menu {
     }
 
     int getId() {
-        return id; //To change body of generated methods, choose Tools | Templates.
+        return id; 
     }
 }
