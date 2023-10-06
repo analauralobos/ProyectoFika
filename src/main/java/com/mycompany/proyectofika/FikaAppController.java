@@ -7,10 +7,15 @@ import spark.Spark;
 import spark.template.velocity.VelocityTemplateEngine;
 
 public class FikaAppController {
-    public static void init() {
-        // Configuración de tu motor de plantillas Velocity
-        VelocityTemplateEngine velocityTemplateEngine = new VelocityTemplateEngine();
+    private PedidoController pedidoController;
+    private VelocityTemplateEngine velocityTemplateEngine;
 
+    public FikaAppController(PedidoController pedidoController, VelocityTemplateEngine velocityTemplateEngine) {
+       this.pedidoController = pedidoController;
+       this.velocityTemplateEngine = velocityTemplateEngine;
+    }
+    
+    public void init() {
         // Configurar rutas y controladores aquí
         Spark.get("/", (req, res) -> {
             // Crear un modelo como un mapa (java.util.Map)
@@ -20,6 +25,10 @@ public class FikaAppController {
 
             // Renderizar la plantilla HTML home.vm utilizando tu motor de plantillas Velocity
             return velocityTemplateEngine.render(new ModelAndView(model, "templates/home.vm"));
+        });
+
+        Spark.get("/pedidos", (req, res) -> {
+            return pedidoController.mostrarPedidos.handle(req, res);
         });
 
         // Agregar más rutas y controladores según sea necesario
