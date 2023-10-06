@@ -16,7 +16,7 @@ public class FikaAppController {
     }
     
     public void init() {
-        // Configurar rutas y controladores aquí
+        // Configurar rutas y controladores
         Spark.get("/", (req, res) -> {
             // Crear un modelo como un mapa (java.util.Map)
             Map<String, Object> model = new HashMap<>();
@@ -31,6 +31,5 @@ public class FikaAppController {
             return pedidoController.mostrarPedidos.handle(req, res);
         });
 
-        // Agregar más rutas y controladores según sea necesario
     }
 }

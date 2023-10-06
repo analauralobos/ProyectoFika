@@ -15,9 +15,6 @@ public class ClienteController {
 
     public Route mostrarClientes = (Request request, Response response) -> {
         List<Cliente> clientes = clienteDAO.obtenerTodosLosClientes();
-        // Renderizar una vista o devolver los clientes como JSON, según tus necesidades
         return "Lista de Clientes: " + clientes.toString();
     };
-
-    // Agregar más métodos para crear, actualizar y eliminar clientes según tus necesidades
 }

@@ -4,10 +4,10 @@ import spark.template.velocity.VelocityTemplateEngine;
 
 public class FikaApp {
     public static void main(String[] args) {
-        // Crear una instancia de VelocityTemplateEngine (puedes personalizarla según tus necesidades)
+        // Crear una instancia de VelocityTemplateEngine
         VelocityTemplateEngine velocityTemplateEngine = new VelocityTemplateEngine();
 
-        // Crear una instancia de PedidoDAO (puedes personalizarlo según tu tecnología de base de datos)
+        // Crear una instancia de PedidoDAO
         PedidoDAO pedidoDAO = new PedidoDAO();
 
         // Crear una instancia de PedidoController y pasar el PedidoDAO
