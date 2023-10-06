@@ -14,7 +14,7 @@ public class MenuDAO {
 
     // Método para agregar un nuevo menú
     public void agregarMenu(Menu menu) {
-        menus.add(menu);
+        this.menus.add(menu);
     }
 
     // Método para obtener todos los menús
@@ -44,4 +44,8 @@ public class MenuDAO {
         menu2.agregarProducto(new Producto(4, "Ensalada César", "Ensalada", 4.0));
         agregarMenu(menu2);
     }
+    
+    
+
+
 }

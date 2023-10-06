@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Menu - Panel de Administración</title>
+    <title>Menús</title>
 </head>
 <body>
     <h1>Listado de Menús</h1>
@@ -10,6 +10,7 @@
         #foreach ($menu in $menus)
         <li>
             <h2>$menu.nombre</h2>
+
             <ul>
                 #foreach ($producto in $menu.productos)
                 <li>
@@ -24,4 +25,3 @@
     </ul>
 </body>
 </html>
-

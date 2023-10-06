@@ -22,9 +22,9 @@ public class MenuController {
 
     public Route mostrarMenus = (Request request, Response response) -> {
         List<Menu> menu = menuDAO.obtenerTodosLosMenus();
-        
+
         Map<String, Object> model = new HashMap<>();
-        model.put("menu", menu);
+        model.put("menus", menu);
 
         return velocityTemplateEngine.render(new ModelAndView(model, "templates/menu.vm"));
     };

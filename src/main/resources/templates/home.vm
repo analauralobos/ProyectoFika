@@ -5,7 +5,7 @@
     <section>
         <!-- Contenido principal de la página de inicio -->
         <p>¡Descubre nuestras deliciosas opciones de café, productos y más!</p>
-        <img src="../img/fondo.jpg" alt="noooo"/>
+        <img src="../img/fondo.jpg" alt="imagen de fondo"/>
     </section>
 </body>
 
