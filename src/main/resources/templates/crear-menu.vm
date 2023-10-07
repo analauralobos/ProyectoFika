@@ -1,1 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Crear Menú</title>
+</head>
+<body>
+    <h1>Crear Menú</h1>
+    <form method="POST" action="/crear-menu">
+        <!-- Campos para ingresar detalles del menú -->
+        <label for="nombreMenu">Nombre del Menú:</label>
+        <input type="text" id="nombreMenu" name="nombreMenu" required><br>
 
+        <label for="descripcion">Descripción:</label>
+        <textarea id="descripcion" name="descripcion"></textarea><br>
+
+        <label for="precio">Precio:</label>
+        <input type="number" id="precio" name="precio" step="0.01" required><br>
+
+        <label for="categoria">Categoría:</label>
+        <input type="text" id="categoria" name="categoria"><br>
+
+        <!-- Campos para ingresar detalles de los productos -->
+        <h2>Productos</h2>
+        <div id="productos">
+            <!-- Puedes agregar dinámicamente campos para productos si es necesario -->
+            <div>
+                <label for="nombreProducto">Nombre del Producto:</label>
+                <input type="text" id="nombreProducto" name="nombreProducto[]" required><br>
+
+                <label for="categoriaProducto">Categoría del Producto:</label>
+                <input type="text" id="categoriaProducto" name="categoriaProducto[]"><br>
+
+                <label for="precioProducto">Precio del Producto:</label>
+                <input type="number" id="precioProducto" name="precioProducto[]" step="0.01" required><br>
+            </div>
+        </div>
+
+        <button type="button" id="agregarProducto">Agregar Producto</button>
+
+        <br>
+        <input type="submit" value="Crear Menú">
+    </form>
+
+    <script>
+        // Código JavaScript para agregar campos de productos dinámicamente
+        document.getElementById("agregarProducto").addEventListener("click", function() {
+            const productosDiv = document.getElementById("productos");
+            const nuevoProductoDiv = document.createElement("div");
+
+            nuevoProductoDiv.innerHTML = `
+                <label for="nombreProducto">Nombre del Producto:</label>
+                <input type="text" name="nombreProducto[]" required><br>
+
+                <label for="categoriaProducto">Categoría del Producto:</label>
+                <input type="text" name="categoriaProducto[]"><br>
+
+                <label for="precioProducto">Precio del Producto:</label>
+                <input type="number" name="precioProducto[]" step="0.01" required><br>
+            `;
+
+            productosDiv.appendChild(nuevoProductoDiv);
+        });
+    </script>
+</body>
+</html>

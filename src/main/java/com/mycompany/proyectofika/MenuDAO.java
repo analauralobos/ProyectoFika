@@ -5,6 +5,7 @@ import java.util.List;
 
 public class MenuDAO {
     private List<Menu> menus;
+    private int ultimoId = 0; // Registro del último ID asignado
 
     public MenuDAO() {
         // Inicializa una lista de menús en memoria y agrega algunos menús de ejemplo
@@ -14,9 +15,16 @@ public class MenuDAO {
 
     // Método para agregar un nuevo menú
     public void agregarMenu(Menu menu) {
+        // Asigna un ID único al menú antes de agregarlo
+        menu.setId(generarIdUnico());
         this.menus.add(menu);
     }
 
+    // Método para generar un ID único
+    int generarIdUnico() {
+        // Incrementa el último ID asignado y lo devuelve como un nuevo ID único
+        return ++ultimoId;
+    }
     // Método para obtener todos los menús
     public List<Menu> obtenerTodosLosMenus() {
         return menus;

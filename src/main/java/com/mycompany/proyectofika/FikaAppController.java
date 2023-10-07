@@ -36,6 +36,21 @@ public class FikaAppController {
         Spark.get("/menu", (req, res) -> {
             return menuController.mostrarMenus.handle(req, res);
         });
+ 
+        Spark.get("/crear-menu", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
 
+            return velocityTemplateEngine.render(new ModelAndView(model, "templates/crear-menu.vm"));
+        });
+
+        Spark.post("/crear-menu", (req, res) -> {
+            return menuController.crearMenu.handle(req, res);
+        });
+        
+        Spark.get("/menu-creado", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+
+            return velocityTemplateEngine.render(new ModelAndView(model, "templates/menu-creado.vm"));
+        });
     }
 }

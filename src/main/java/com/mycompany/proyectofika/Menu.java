@@ -10,6 +10,15 @@ public class Menu {
     private int id;
     private String nombre;
     private List<Producto> productos;
+    private double precioTotal;
+
+    public double getPrecioTotal() {
+        return precioTotal;
+    }
+
+    public void setPrecioTotal(double precioTotal) {
+        this.precioTotal = precioTotal;
+    }
 
     public Menu(int id, String nombre) {
         this.id = id;
@@ -19,6 +28,10 @@ public class Menu {
 
     public void agregarProducto(Producto producto) {
         productos.add(producto);
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getId() {

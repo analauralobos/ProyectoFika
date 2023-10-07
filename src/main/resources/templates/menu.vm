@@ -9,14 +9,15 @@
     <ul>
         #foreach ($menu in $menus)
         <li>
-            <h2>$menu.nombre</h2>
+            <h2>$menu.getNombre()</h2>
+            <p><strong>Precio Total:</strong> $menu.getPrecioTotal()</p>
 
             <ul>
-                #foreach ($producto in $menu.productos)
+                #foreach ($producto in $menu.getProductos())
                 <li>
-                    <strong>Producto:</strong> $producto.nombre<br>
-                    <strong>Categoría:</strong> $producto.categoria<br>
-                    <strong>Precio:</strong> $producto.precio
+                    <strong>Producto:</strong> $producto.getNombre()<br>
+                    <strong>Categoría:</strong> $producto.getCategoria()<br>
+                    <strong>Precio:</strong> $producto.getPrecio()
                 </li>
                 #end
             </ul>
