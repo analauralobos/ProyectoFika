@@ -2,33 +2,81 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Pedidos - Panel de Administración</title>
+    <title>Pedidos</title>
+    <style>
+        /* Estilos personalizados */
+        body {
+            background-color: #D2B48C; /* Marrón claro para el fondo del cuerpo */
+            color: #8B4513; /* Marrón oscuro para el texto principal */
+            font-family: Arial, sans-serif; /* Fuente del texto */
+            margin: 0; /* Elimina el margen predeterminado */
+            padding: 20px; /* Agrega espacio alrededor del contenido */
+        }
+
+        h1 {
+            color: #8B4513; /* Marrón oscuro para los encabezados h1 */
+        }
+
+        ul {
+            list-style-type: none; /* Elimina los marcadores de lista */
+            padding: 0; /* Elimina el espacio de relleno en la lista */
+        }
+
+        li {
+            background-color: #FFF8DC; /* Fondo de los elementos de lista en marrón claro */
+            padding: 10px; /* Agrega espacio alrededor de los elementos de lista */
+            margin-bottom: 10px; /* Agrega espacio entre los elementos de lista */
+        }
+
+        strong {
+            color: #D2691E; /* Marrón dorado para el texto en negrita */
+        }
+
+        /* Estilos para el breadcrumb */
+        .breadcrumb {
+            background-color: transparent; /* Fondo transparente para el breadcrumb */
+            padding: 0; /* Elimina el espacio de relleno predeterminado */
+            display: flex; /* Muestra los elementos del breadcrumb en una fila */
+        }
+
+        .breadcrumb-item {
+            color: #8B4513; /* Marrón oscuro para los elementos del breadcrumb */
+            margin-right: 10px; /* Agrega espacio entre los elementos del breadcrumb */
+        }
+
+        .breadcrumb-item:last-child {
+            margin-right: 0; /* Elimina el espacio después del último elemento del breadcrumb */
+        }
+
+        .breadcrumb-item a {
+            color: #8B4513; /* Marrón oscuro para los enlaces del breadcrumb */
+            text-decoration: none; /* Elimina la subraya de los enlaces */
+        }
+
+        .breadcrumb-item.active {
+            color: #D2691E; /* Marrón dorado para la página actual en el breadcrumb */
+        }
+    </style>
 </head>
 <body>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Pedidos</li>
+        </ol>
+    </nav>
+    
     <h1>Lista de Pedidos</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Número de Pedido</th>
-                <th>Fecha de Pedido</th>
-                <th>Fecha de Entrega</th>
-                <th>Estado del Pedido</th>
-                <th>Cliente</th>
-                
-            </tr>
-        </thead>
-        <tbody>
-            #foreach ($pedido in $pedidos)
-            <tr>
-                <td>$pedido.id</td>
-                <td>$pedido.fechaPedido</td>
-                <td>$pedido.fechaEntrega</td>
-                <td>$pedido.estado</td>
-                <td>$pedido.cliente.nombre</td>
-                
-            </tr>
-            #end
-        </tbody>
-    </table>
+    <ul>
+        #foreach ($pedido in $pedidos)
+        <li>
+            <h2>Pedido #$pedido.id</h2>
+            <p><strong>Fecha de Pedido:</strong> $pedido.fechaPedido</p>
+            <p><strong>Fecha de Entrega:</strong> $pedido.fechaEntrega</p>
+            <p><strong>Estado del Pedido:</strong> $pedido.estado</p>
+            <p><strong>Cliente:</strong> $pedido.cliente.nombre</p>
+        </li>
+        #end
+    </ul>
 </body>
 </html>

@@ -3,8 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <title>Crear Menú</title>
+    <style>
+        /* Estilos personalizados */
+        body {
+            background-color: #D2B48C; /* Marrón claro para el fondo del cuerpo */
+            color: #8B4513; /* Marrón oscuro para el texto principal */
+            font-family: Arial, sans-serif; /* Fuente del texto */
+            margin: 0; /* Elimina el margen predeterminado */
+            padding: 20px; /* Agrega espacio alrededor del contenido */
+        }
+
+        h1 {
+            color: #8B4513; /* Marrón oscuro para los encabezados h1 */
+        }
+
+        label {
+            color: #8B4513; /* Marrón oscuro para las etiquetas */
+            font-weight: bold; /* Texto en negrita */
+        }
+
+        input[type="text"],
+        input[type="number"],
+        textarea {
+            width: 100%; /* Ancho completo del contenedor */
+            padding: 10px; /* Agrega espacio alrededor del campo de entrada */
+            margin-bottom: 15px; /* Agrega espacio vertical entre los campos */
+            border: 1px solid #8B4513; /* Borde marrón claro */
+            border-radius: 5px; /* Borde redondeado */
+        }
+
+        button[type="button"] {
+            background-color: #8B4513; /* Marrón oscuro para el botón */
+            color: #fff; /* Texto blanco */
+            padding: 10px 20px; /* Agrega espacio alrededor del botón */
+            border: none; /* Sin borde */
+            border-radius: 5px; /* Borde redondeado */
+            cursor: pointer; /* Cambia el cursor al pasar el mouse sobre el botón */
+        }
+
+        button[type="button"]:hover {
+            background-color: #D2691E; /* Marrón dorado al pasar el mouse sobre el botón */
+        }
+
+        input[type="submit"] {
+            background-color: #8B4513; /* Marrón oscuro para el botón de enviar */
+            color: #fff; /* Texto blanco */
+            padding: 10px 20px; /* Agrega espacio alrededor del botón de enviar */
+            border: none; /* Sin borde */
+            border-radius: 5px; /* Borde redondeado */
+            cursor: pointer; /* Cambia el cursor al pasar el mouse sobre el botón de enviar */
+        }
+
+        input[type="submit"]:hover {
+            background-color: #D2691E; /* Marrón dorado al pasar el mouse sobre el botón de enviar */
+        }
+
+        /* Estilo para el botón "Agregar Producto" */
+        #agregarProducto {
+            background-color: #8B4513; /* Marrón oscuro para el botón */
+            color: #fff; /* Texto blanco */
+            padding: 10px 20px; /* Agrega espacio alrededor del botón */
+            border: none; /* Sin borde */
+            border-radius: 5px; /* Borde redondeado */
+            cursor: pointer; /* Cambia el cursor al pasar el mouse sobre el botón */
+        }
+
+        #agregarProducto:hover {
+            background-color: #D2691E; /* Marrón dorado al pasar el mouse sobre el botón */
+        }
+
+        /* Estilos para el breadcrumb */
+        .breadcrumb {
+            background-color: transparent; /* Fondo transparente */
+            padding: 10px 0; /* Agrega espacio alrededor del breadcrumb */
+            list-style: none; /* Quita los marcadores de lista */
+        }
+
+        .breadcrumb-item {
+            display: inline; /* Mostrar elementos uno al lado del otro */
+            margin-right: 5px; /* Agrega espacio entre los elementos */
+        }
+
+        /* Estilo para el botón "Cancelar" */
+        #btnCancelar {
+            background-color: #8B4513; /* Marrón oscuro para el botón */
+            color: #fff; /* Texto blanco */
+            padding: 10px 20px; /* Agrega espacio alrededor del botón */
+            border: none; /* Sin borde */
+            border-radius: 5px; /* Borde redondeado */
+            cursor: pointer; /* Cambia el cursor al pasar el mouse sobre el botón */
+        }
+
+        #btnCancelar:hover {
+            background-color: #D2691E; /* Marrón dorado al pasar el mouse sobre el botón */
+        }
+    </style>
 </head>
 <body>
+    <!-- Breadcrumb -->
+    <ul class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+        <li class="breadcrumb-item active">Crear Menú</li>
+    </ul>
+
     <h1>Crear Menú</h1>
     <form method="POST" action="/crear-menu">
         <!-- Campos para ingresar detalles del menú -->
@@ -40,6 +141,8 @@
 
         <br>
         <input type="submit" value="Crear Menú">
+        <button type="button" id="btnCancelar" onclick="window.location.href='/'">Cancelar</button>
+        
     </form>
 
     <script>
